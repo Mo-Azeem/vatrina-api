@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form id="upload-form" method="post" action="http://127.0.0.1:5000/photos">
+        <input type="file" name="photo" id="photo" >
+        <button id="submit-btn">upload</button>
+    </form>
+</body>
+<script>
+    const uploadButton = document.querySelector('#submit-btn')
+    const form = document.querySelector('#upload-form')
+    uploadButton.addEventListener('click', (e)=>{
+        e.preventDefault()
+        const formData = new FormData(form)
+        const values = [...formData.entries()]
+        post()
+    })
+
+    const post = async () => {
+            let response = await fetch ('http://127.0.0.1:5000/photos',{
+                method: 'POST', 
+                body: new FormData(form),
+                mode: 'no-cors'
+            })
+        }
+</script>
+</html>
