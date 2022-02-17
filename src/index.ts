@@ -25,3 +25,5 @@ app.use(globals.servingThumbnailsURL,express.static(globals.thumbnailPhotosPath)
 app.listen(port, () => {
     console.log('now serving on loacalhost:' + port);
 })
+
+export default app
