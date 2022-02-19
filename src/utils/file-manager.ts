@@ -39,10 +39,14 @@ export const thumbnailOf = (fileName: string): string => {
 }
 
 export const savePhoto = async (photo: UploadedFile) => {
-    const photoPath = fullPath(photo.name)
-    if(!doesExist(photo.name)) await photo.mv(photoPath);
-    if(!doesExist(thumbnailOf(photo.name))) await resizer(photo.name)
-    return await jsonfiyPhoto(photo.name)
+    try {
+        const photoPath = fullPath(photo.name)
+        if(!doesExist(photo.name)) await photo.mv(photoPath);
+        if(!doesExist(thumbnailOf(photo.name))) await resizer(photo.name)
+        return await jsonfiyPhoto(photo.name)
+    } catch (err) {
+        console.log('error')
+    }
 }
 
 export default {
