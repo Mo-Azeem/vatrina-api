@@ -1,10 +1,10 @@
 # Vatrina.api
 
-![](C:\Users\zema_\Desktop\vatrina.api logo.png)
+![](https://i.imgur.com/DfJelTI_d.webp?maxwidth=760&fidelity=grand)
 
 ### Intro
 
-Vatrina.api is a bite-sized image hosting server written in Express, which stores images as files on the server's disk, and produce thumbnails from uploaded images upon receiving. When uploading is done, the app sends JSON back with all needed info like metadata, photo's link, photo's thumbnail link, and more. 
+Vatrina.api is a bite-sized image hosting server written in Express, which stores images as files on the server's disk, and produces thumbnails from uploaded images upon receiving. When uploading is done, the app sends JSON back with all needed info like metadata, photo's link, photo's thumbnail link, and more. 
 
 
 
@@ -12,19 +12,19 @@ Vatrina.api is a bite-sized image hosting server written in Express, which store
 
 To get the server up and running, open up a terminal and make sure the current working directory is the root of the Vatrina.api folder, then install all the dependencies by typing: 
 
-```
+```bash
 npm install
 ```
 
 and then type the next command to start the server
 
-```
+```bash
 npm start
 ```
 
 or
 
-```
+```bash
 npm run start
 ```
 
@@ -57,3 +57,10 @@ Upload a single photo at a time, bulk uploading isn't available yet.
 Make sure to use **Form Data** as the body type and include **photo as Key**, with **a file as Value**
 
 ![](C:\Users\zema_\Desktop\Capture.PNG)
+
+
+
+#### GET /api/thumbnails
+
+To retrieve all available thumbnails.
+
