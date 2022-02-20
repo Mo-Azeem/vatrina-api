@@ -56,7 +56,7 @@ Upload a single photo at a time, bulk uploading isn't available yet.
 
 Make sure to use **Form Data** as the body type and include **photo as Key**, with **a file as Value**
 
-![](C:\Users\zema_\Desktop\Capture.PNG)
+![](https://i.imgur.com/vkoTqX7.png)
 
 
 
