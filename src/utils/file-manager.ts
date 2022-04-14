@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-import { existsSync, statSync } from "fs";
+import { existsSync, mkdirSync, statSync } from "fs";
 import p from "path";
 import { thumbnailPhotosPath, originalPhotosPath } from "./globals";
 import { UploadedFile } from "express-fileupload";
@@ -51,6 +51,13 @@ export const savePhoto = async (photo: UploadedFile) => {
       console.log("error");
    }
 };
+
+export const createDirIfNotExist = () => {   
+   if (!existsSync('./photos')){
+      mkdirSync('./photos/originals', { recursive: true });
+      mkdirSync('./photos/thumbnails', { recursive: true });
+   }
+}
 
 export default {
    allPhotos,

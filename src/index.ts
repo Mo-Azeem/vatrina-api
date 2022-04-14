@@ -3,6 +3,7 @@ import fileUpload from "express-fileupload";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import cors from "cors";
+import { createDirIfNotExist } from "./utils/file-manager";
 
 import routes from "./routers";
 import globals from "./utils/globals";
@@ -30,5 +31,7 @@ app.use(
 app.listen(port, () => {
    console.log("now serving on loacalhost:" + port);
 });
+
+createDirIfNotExist()
 
 export default app;
